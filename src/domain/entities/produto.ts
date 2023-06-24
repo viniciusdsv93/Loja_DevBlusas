@@ -50,6 +50,9 @@ export class Produto {
 		if (!url_imagem) {
 			throw new Error("A url de imagem do produto é obrigatória");
 		}
+		if (!url_imagem.match(/^(http(s)?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-.\/?%&=]*)?$/)) {
+			throw new Error("A url de imagem do produto deve ser válida");
+		}
 
 		this.nome = nome;
 		this.nota = nota;
