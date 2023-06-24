@@ -3,33 +3,35 @@ import { IListarProdutos } from "../../../domain/usecases/listar-produtos";
 import { ListarProdutosController } from "./listar-produtos";
 
 describe("Controller listar produtos", () => {
+	let listaProdutos = [
+		new Produto(
+			"nome_produto1",
+			5,
+			100.0,
+			4,
+			"https://www.url-de-exemplo-valida.com"
+		),
+		new Produto(
+			"nome_produto2",
+			5,
+			1000.0,
+			4,
+			"https://www.url-de-exemplo-valida.com"
+		),
+		new Produto(
+			"nome_produto3",
+			5,
+			10000.0,
+			4,
+			"https://www.url-de-exemplo-valida.com"
+		),
+	];
+
 	const makeListarProdutosUsecase = (): IListarProdutos => {
 		class ListarProdutosUsecaseStub implements IListarProdutos {
 			execute(): Promise<Produto[]> {
 				return new Promise((resolve) => {
-					resolve([
-						new Produto(
-							"nome_produto1",
-							5,
-							100.0,
-							4,
-							"https://www.url-de-exemplo-valida.com"
-						),
-						new Produto(
-							"nome_produto2",
-							5,
-							1000.0,
-							4,
-							"https://www.url-de-exemplo-valida.com"
-						),
-						new Produto(
-							"nome_produto3",
-							5,
-							10000.0,
-							4,
-							"https://www.url-de-exemplo-valida.com"
-						),
-					]);
+					resolve(listaProdutos);
 				});
 			}
 		}
@@ -65,5 +67,13 @@ describe("Controller listar produtos", () => {
 		const resposta = await sut.handle();
 
 		expect(resposta.statusCode).toEqual(200);
+	});
+
+	test("Deve retornar uma lista de produtos no corpo da resposta HTTP em caso de sucesso", async () => {
+		const { sut } = makeSut();
+
+		const resposta = await sut.handle();
+
+		expect(resposta.body).toEqual(listaProdutos);
 	});
 });
