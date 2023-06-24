@@ -29,6 +29,9 @@ export class Produto {
 		if (nota < 0) {
 			throw new Error("A nota do produto deve ser maior do que 0");
 		}
+		if (nota > 5) {
+			throw new Error("A nota do produto deve ser menor ou igual a 5");
+		}
 		if (!preco) {
 			throw new Error("O preço do produto é obrigatório");
 		}
