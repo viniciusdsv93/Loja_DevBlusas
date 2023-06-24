@@ -14,20 +14,23 @@ export class Produto {
 		numero_parcelas: number | undefined,
 		url_imagem: string | undefined
 	) {
-		if (!nome || nome.length < 2) {
-			throw new Error();
+		if (!nome) {
+			throw new Error("O nome do produto é obrigatório");
+		}
+		if (nome.length < 2) {
+			throw new Error("O nome do produto deve possuir ao menos dois caracteres");
 		}
 		if (!nota) {
-			throw new Error();
+			throw new Error("A nota do produto é obrigatória");
 		}
 		if (!preco) {
-			throw new Error();
+			throw new Error("O preço do produto é obrigatório");
 		}
 		if (!numero_parcelas) {
-			throw new Error();
+			throw new Error("O número de parcelas do produto é obrigatório");
 		}
 		if (!url_imagem) {
-			throw new Error();
+			throw new Error("A url de imagem do produto é obrigatória");
 		}
 
 		this.nome = nome;
