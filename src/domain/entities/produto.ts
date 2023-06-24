@@ -42,7 +42,6 @@ export class Produto {
 		numero_parcelas: number | undefined,
 		url_imagem: string | undefined
 	) {
-		console.log({ numero_parcelas });
 		if (!nome) {
 			throw new Error("O nome do produto é obrigatório");
 		}
