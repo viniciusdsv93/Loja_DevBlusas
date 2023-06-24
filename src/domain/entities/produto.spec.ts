@@ -119,4 +119,14 @@ describe("Entidade Produto", () => {
 		);
 		expect(produto._valor_parcela).toEqual(30);
 	});
+	test("Deve calcular o preço PIX corretamente", () => {
+		const produto = new Produto(
+			"nome_de_exemplo",
+			5,
+			1000.0,
+			4,
+			"https://www.url-de-exemplo-valida.com"
+		);
+		expect(produto._preco_pix).toEqual(950.0);
+	});
 });
