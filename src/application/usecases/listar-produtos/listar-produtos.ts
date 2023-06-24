@@ -8,7 +8,7 @@ export class ListarProdutos implements IListarProdutos {
 		this.produtosRepository = produtosRepository;
 	}
 
-	execute() {
-		return this.produtosRepository.listar();
+	async execute() {
+		return await this.produtosRepository.listar();
 	}
 }

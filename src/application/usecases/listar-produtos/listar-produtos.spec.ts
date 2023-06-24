@@ -11,7 +11,7 @@ describe("Usecase listar produtos", () => {
 
 	const makeProdutosRepository = (): IProdutosRepository => {
 		class ProdutosRepositoryStub implements IProdutosRepository {
-			listar(): Produto[] {
+			async listar(): Promise<Produto[]> {
 				return [
 					new Produto(
 						"nome_produto1",
@@ -50,20 +50,20 @@ describe("Usecase listar produtos", () => {
 		};
 	};
 
-	test("Deve retornar uma lista de produtos", () => {
+	test("Deve retornar uma lista de produtos", async () => {
 		const { listarProdutos } = makeSut();
 
-		const produtos = listarProdutos.execute();
+		const produtos = await listarProdutos.execute();
 
 		expect(Array.isArray(produtos)).toBe(true);
 	});
 
-	test("Deve chamar a função listar do repository", () => {
+	test("Deve chamar a função listar do repository", async () => {
 		const { listarProdutos, produtosRepository } = makeSut();
 
 		const produtosRepositorySpy = jest.spyOn(produtosRepository, "listar");
 
-		listarProdutos.execute();
+		await listarProdutos.execute();
 
 		expect(produtosRepositorySpy).toHaveBeenCalled();
 	});
