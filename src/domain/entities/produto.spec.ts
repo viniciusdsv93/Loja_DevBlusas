@@ -42,4 +42,9 @@ describe("Entidade Produto", () => {
 			);
 		}).toThrowError("O nome do produto deve possuir no máximo 255 caracteres");
 	});
+	test("Deve lançar uma exceção caso a nota informada seja menor do que 0", () => {
+		expect(() => {
+			new Produto("nome_de_exemplo", -1, 120.0, 4, "url_de_exemplo");
+		}).toThrowError("A nota do produto deve ser maior do que 0");
+	});
 });
