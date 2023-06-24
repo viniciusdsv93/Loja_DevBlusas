@@ -35,6 +35,9 @@ export class Produto {
 		if (!preco) {
 			throw new Error("O preço do produto é obrigatório");
 		}
+		if (preco < 0) {
+			throw new Error("O preco do produto deve ser maior do que 0");
+		}
 		if (!numero_parcelas) {
 			throw new Error("O número de parcelas do produto é obrigatório");
 		}

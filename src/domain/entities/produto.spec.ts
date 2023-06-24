@@ -52,4 +52,9 @@ describe("Entidade Produto", () => {
 			new Produto("nome_de_exemplo", 6, 120.0, 4, "url_de_exemplo");
 		}).toThrowError("A nota do produto deve ser menor ou igual a 5");
 	});
+	test("Deve lançar uma exceção caso o preco informado seja menor do que 0", () => {
+		expect(() => {
+			new Produto("nome_de_exemplo", 5, -120.0, 4, "url_de_exemplo");
+		}).toThrowError("O preco do produto deve ser maior do que 0");
+	});
 });
