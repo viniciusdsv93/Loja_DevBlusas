@@ -31,4 +31,15 @@ describe("Entidade Produto", () => {
 			new Produto("a", 5, 120.0, 4, "url_de_exemplo");
 		}).toThrowError("O nome do produto deve possuir ao menos dois caracteres");
 	});
+	test("Deve lançar uma exceção caso o nome possua mais do que 255 caracteres", () => {
+		expect(() => {
+			new Produto(
+				"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+				5,
+				120.0,
+				4,
+				"url_de_exemplo"
+			);
+		}).toThrowError("O nome do produto deve possuir no máximo 255 caracteres");
+	});
 });

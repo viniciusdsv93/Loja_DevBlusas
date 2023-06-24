@@ -20,6 +20,9 @@ export class Produto {
 		if (nome.length < 2) {
 			throw new Error("O nome do produto deve possuir ao menos dois caracteres");
 		}
+		if (nome.length > 255) {
+			throw new Error("O nome do produto deve possuir no máximo 255 caracteres");
+		}
 		if (!nota) {
 			throw new Error("A nota do produto é obrigatória");
 		}
