@@ -14,6 +14,7 @@ export class Produto {
 		numero_parcelas: number | undefined,
 		url_imagem: string | undefined
 	) {
+		console.log({ numero_parcelas });
 		if (!nome) {
 			throw new Error("O nome do produto é obrigatório");
 		}
@@ -40,6 +41,11 @@ export class Produto {
 		}
 		if (!numero_parcelas) {
 			throw new Error("O número de parcelas do produto é obrigatório");
+		}
+		if (numero_parcelas && numero_parcelas < 1) {
+			throw new Error(
+				"O número de parcelas do produto deve ser maior ou igual a 1"
+			);
 		}
 		if (!url_imagem) {
 			throw new Error("A url de imagem do produto é obrigatória");

@@ -23,7 +23,7 @@ describe("Entidade Produto", () => {
 	});
 	test("Deve lançar uma exceção caso não seja informada a url da imagem do produto", () => {
 		expect(() => {
-			new Produto("nome_de_exemplo", 5, 120.0, 4, "");
+			new Produto("nome_de_exemplo", 5, 120.0, 4, undefined);
 		}).toThrowError("A url de imagem do produto é obrigatória");
 	});
 	test("Deve lançar uma exceção caso o nome possua menos do que dois caracteres", () => {
@@ -56,5 +56,10 @@ describe("Entidade Produto", () => {
 		expect(() => {
 			new Produto("nome_de_exemplo", 5, -120.0, 4, "url_de_exemplo");
 		}).toThrowError("O preco do produto deve ser maior do que 0");
+	});
+	test("Deve lançar uma exceção caso o numero de parcelas informado seja menor do que 1", () => {
+		expect(() => {
+			new Produto("nome_de_exemplo", 5, 120.0, 0.1, "url_de_exemplo");
+		}).toThrowError("O número de parcelas do produto deve ser maior ou igual a 1");
 	});
 });
