@@ -57,4 +57,14 @@ describe("Usecase listar produtos", () => {
 
 		expect(Array.isArray(produtos)).toBe(true);
 	});
+
+	test("Deve chamar a função listar do repository", () => {
+		const { listarProdutos, produtosRepository } = makeSut();
+
+		const produtosRepositorySpy = jest.spyOn(produtosRepository, "listar");
+
+		listarProdutos.execute();
+
+		expect(produtosRepositorySpy).toHaveBeenCalled();
+	});
 });
