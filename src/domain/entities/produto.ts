@@ -7,6 +7,34 @@ export class Produto {
 	private preco_pix: number;
 	private url_imagem: string;
 
+	get _nome(): string {
+		return this.nome;
+	}
+
+	get _nota(): number {
+		return this.nota;
+	}
+
+	get _preco(): number {
+		return this.preco;
+	}
+
+	get _numero_parcelas(): number {
+		return this.numero_parcelas;
+	}
+
+	get _valor_parcela(): number {
+		return this.valor_parcela;
+	}
+
+	get _preco_pix(): number {
+		return this.preco_pix;
+	}
+
+	get _url_imagem(): string {
+		return this.url_imagem;
+	}
+
 	constructor(
 		nome: string | undefined,
 		nota: number | undefined,

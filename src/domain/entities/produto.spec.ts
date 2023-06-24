@@ -109,4 +109,14 @@ describe("Entidade Produto", () => {
 			new Produto("nome_de_exemplo", 5, 120.0, 4, "url_invalida");
 		}).toThrowError("A url de imagem do produto deve ser válida");
 	});
+	test("Deve calcular o valor de cada parcela corretamente", () => {
+		const produto = new Produto(
+			"nome_de_exemplo",
+			5,
+			120.0,
+			4,
+			"https://www.url-de-exemplo-valida.com"
+		);
+		expect(produto._valor_parcela).toEqual(30);
+	});
 });
