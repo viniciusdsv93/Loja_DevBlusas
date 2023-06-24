@@ -14,7 +14,7 @@ export class Produto {
 		numero_parcelas: number | undefined,
 		url_imagem: string | undefined
 	) {
-		if (!nome) {
+		if (!nome || nome.length < 2) {
 			throw new Error();
 		}
 		if (!nota) {

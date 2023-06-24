@@ -26,4 +26,9 @@ describe("Entidade Produto", () => {
 			new Produto("nome_de_exemplo", 5, 120.0, 4, "");
 		}).toThrowError();
 	});
+	test("Deve lançar uma exceção caso o nome possua menos do que dois caracteres", () => {
+		expect(() => {
+			new Produto("a", 5, 120.0, 4, "url_de_exemplo");
+		}).toThrowError();
+	});
 });
