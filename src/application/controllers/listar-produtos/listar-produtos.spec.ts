@@ -58,4 +58,12 @@ describe("Controller listar produtos", () => {
 
 		expect(listarProdutosUsecaseSpy).toHaveBeenCalled();
 	});
+
+	test("Deve retornar uma resposta HTTP com status 200 em caso de sucesso", async () => {
+		const { sut } = makeSut();
+
+		const resposta = await sut.handle();
+
+		expect(resposta.statusCode).toEqual(200);
+	});
 });
