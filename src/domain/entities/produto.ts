@@ -1,4 +1,7 @@
+import { v4 as uuid } from "uuid";
+
 export class Produto {
+	private id: string;
 	private nome: string;
 	private nota: number;
 	private preco: number;
@@ -6,6 +9,10 @@ export class Produto {
 	private valor_parcela: number;
 	private preco_pix: number;
 	private url_imagem: string;
+
+	get _id(): string {
+		return this.id;
+	}
 
 	get _nome(): string {
 		return this.nome;
@@ -81,6 +88,7 @@ export class Produto {
 			throw new Error("A url de imagem do produto deve ser válida");
 		}
 
+		this.id = uuid();
 		this.nome = nome;
 		this.nota = nota;
 		this.preco = preco;

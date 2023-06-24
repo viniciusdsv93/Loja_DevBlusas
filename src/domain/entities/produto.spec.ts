@@ -129,4 +129,15 @@ describe("Entidade Produto", () => {
 		);
 		expect(produto._preco_pix).toEqual(950.0);
 	});
+	test("Deve gerar um id ao instanciar um objeto produto", () => {
+		const produto = new Produto(
+			"nome_de_exemplo",
+			5,
+			1000.0,
+			4,
+			"https://www.url-de-exemplo-valida.com"
+		);
+		expect(produto._id).toBeTruthy();
+		expect(typeof produto._id).toEqual("string");
+	});
 });
