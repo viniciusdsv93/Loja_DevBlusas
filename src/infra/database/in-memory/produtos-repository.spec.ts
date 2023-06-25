@@ -1,4 +1,5 @@
 import { IProdutosRepository } from "../../../application/repositories/produtos-repository";
+import { Produto } from "../../../domain/entities/produto";
 import { InMemoryProdutosRepository } from "./produtos-repository";
 
 describe("In memory produtos repository", () => {
@@ -19,5 +20,13 @@ describe("In memory produtos repository", () => {
 		const produtos = await sut.listar();
 
 		expect(Array.isArray(produtos)).toBe(true);
+	});
+
+	test("Os objetos listados devem ser instâncias da classe Produto", async () => {
+		const { sut } = makeSut();
+
+		const produtos = await sut.listar();
+
+		expect(produtos[0] instanceof Produto).toBe(true);
 	});
 });
