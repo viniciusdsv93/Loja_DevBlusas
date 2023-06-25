@@ -1,5 +1,4 @@
 import { IProdutosRepository } from "../../../application/repositories/produtos-repository";
-import { Produto } from "../../../domain/entities/produto";
 import { InMemoryProdutosRepository } from "./produtos-repository";
 
 describe("In memory produtos repository", () => {
