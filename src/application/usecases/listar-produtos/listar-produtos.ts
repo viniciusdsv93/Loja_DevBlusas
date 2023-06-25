@@ -1,5 +1,5 @@
 import { IListarProdutos } from "../../../domain/usecases/listar-produtos";
-import { IProdutosRepository } from "../../repositories/listar-produtos-repository";
+import { IProdutosRepository } from "../../repositories/produtos-repository";
 
 export class ListarProdutos implements IListarProdutos {
 	private produtosRepository: IProdutosRepository;

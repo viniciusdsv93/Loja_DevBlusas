@@ -1,6 +1,6 @@
 import { Produto } from "../../../domain/entities/produto";
 import { IListarProdutos } from "../../../domain/usecases/listar-produtos";
-import { IProdutosRepository } from "../../repositories/listar-produtos-repository";
+import { IProdutosRepository } from "../../repositories/produtos-repository";
 import { ListarProdutos } from "./listar-produtos";
 
 describe("Usecase listar produtos", () => {
