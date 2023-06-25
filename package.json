@@ -7,7 +7,7 @@
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:unit": "jest",
     "test:coverage": "npm test -- --coverage",
-    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/main/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/main/server.ts env:dev",
     "build": "tsc"
   },
   "repository": {

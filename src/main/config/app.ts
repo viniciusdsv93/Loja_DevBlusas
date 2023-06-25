@@ -1,5 +1,6 @@
 import express from "express";
 import * as dotenv from "dotenv";
+import { router } from "../routes/routes";
 dotenv.config();
 
 export class App {
@@ -8,7 +9,12 @@ export class App {
 
 	constructor() {
 		this.express = express();
+		this.router();
 		this.listen();
+	}
+
+	private router() {
+		this.express.use(router);
 	}
 
 	private listen() {
