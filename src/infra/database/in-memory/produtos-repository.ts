@@ -7,24 +7,73 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 	constructor() {
 		this.listaProdutos = [
 			new Produto(
-				"nome_produto1",
+				"blusa de moletom vermelha",
 				5,
-				100.0,
+				189.9,
 				4,
 				"https://www.url-de-exemplo-valida.com"
 			),
 			new Produto(
-				"nome_produto2",
+				"calça jeans preta",
 				5,
-				1000.0,
-				4,
+				220.4,
+				5,
 				"https://www.url-de-exemplo-valida.com"
 			),
 			new Produto(
-				"nome_produto3",
+				"camiseta de manga longa branca",
 				5,
-				10000.0,
-				4,
+				119.99,
+				2,
+				"https://www.url-de-exemplo-valida.com"
+			),
+			new Produto(
+				"camiseta de manga curta amarela",
+				5,
+				59.99,
+				2,
+				"https://www.url-de-exemplo-valida.com"
+			),
+			new Produto(
+				"par de meias azuis",
+				5,
+				19.99,
+				2,
+				"https://www.url-de-exemplo-valida.com"
+			),
+			new Produto(
+				"vestido laranja",
+				5,
+				79.99,
+				2,
+				"https://www.url-de-exemplo-valida.com"
+			),
+			new Produto(
+				"saia longa branca",
+				5,
+				49.99,
+				2,
+				"https://www.url-de-exemplo-valida.com"
+			),
+			new Produto(
+				"jaqueta de couro sintético",
+				5,
+				320.99,
+				10,
+				"https://www.url-de-exemplo-valida.com"
+			),
+			new Produto(
+				"jaqueta jeans azul",
+				5,
+				279.99,
+				8,
+				"https://www.url-de-exemplo-valida.com"
+			),
+			new Produto(
+				"par de chinelos",
+				5,
+				39.99,
+				2,
 				"https://www.url-de-exemplo-valida.com"
 			),
 		];
