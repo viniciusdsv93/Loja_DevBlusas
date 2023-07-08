@@ -1,5 +1,5 @@
 import { IListarProdutoUnico } from "../../../domain/usecases/listar-produto-unico";
-import { ok } from "../helpers/http";
+import { notFound, ok } from "../helpers/http";
 import { Controller } from "../protocols/controller";
 import { HttpRequest } from "../protocols/http";
 
@@ -14,6 +14,10 @@ export class ListarProdutoUnicoController implements Controller {
 		const { params } = HttpRequest;
 		const { id } = params;
 		const produto = await this.listarProdutoUnicoUsecase.execute(id);
-		return ok(produto);
+		console.log({ produto });
+		if (produto) {
+			return ok(produto);
+		}
+		return notFound(id);
 	}
 }
