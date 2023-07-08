@@ -2,6 +2,7 @@ import { v4 as uuid } from "uuid";
 
 export class Produto {
 	private id: string;
+	private subId: string;
 	private nome: string;
 	private nota: number;
 	private preco: number;
@@ -12,6 +13,10 @@ export class Produto {
 
 	get _id(): string {
 		return this.id;
+	}
+
+	get _subId(): string {
+		return this.subId;
 	}
 
 	get _nome(): string {
@@ -44,6 +49,7 @@ export class Produto {
 
 	constructor(
 		nome: string | undefined,
+		subId: string | undefined,
 		nota: number | undefined,
 		preco: number | undefined,
 		numero_parcelas: number | undefined,
@@ -58,6 +64,17 @@ export class Produto {
 		if (nome.length > 255) {
 			throw new Error("O nome do produto deve possuir no máximo 255 caracteres");
 		}
+
+		if (!subId) {
+			throw new Error("O subId do produto é obrigatório");
+		}
+		if (subId.length < 2) {
+			throw new Error("O subId do produto deve possuir ao menos dois caracteres");
+		}
+		if (subId.length > 255) {
+			throw new Error("O subId do produto deve possuir no máximo 255 caracteres");
+		}
+
 		if (!nota) {
 			throw new Error("A nota do produto é obrigatória");
 		}
@@ -89,6 +106,7 @@ export class Produto {
 		}
 
 		this.id = uuid();
+		this.subId = subId;
 		this.nome = nome;
 		this.nota = nota;
 		this.preco = preco;
