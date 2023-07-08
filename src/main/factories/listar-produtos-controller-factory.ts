@@ -8,10 +8,8 @@ import { MongoProdutosRepository } from "../../infra/database/mongo/produtos-rep
 export const makeListarProdutosController = (): Controller => {
 	const env = process.argv[2].split(":")[1];
 
-	const inMemoryProdutosRepository: IProdutosRepository =
+	const produtosRepository: IProdutosRepository =
 		env == "dev" ? new MongoProdutosRepository() : new MongoProdutosRepository();
-	const listarProdutosUsecase: ListarProdutos = new ListarProdutos(
-		inMemoryProdutosRepository
-	);
+	const listarProdutosUsecase: ListarProdutos = new ListarProdutos(produtosRepository);
 	return new ListarProdutosController(listarProdutosUsecase);
 };
