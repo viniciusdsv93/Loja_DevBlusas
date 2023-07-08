@@ -8,8 +8,6 @@ export const badRequest = (error: Error): HttpResponse => {
 };
 
 export const ok = (data: any): HttpResponse => {
-	console.log({ data });
-
 	return {
 		statusCode: 200,
 		body: data,

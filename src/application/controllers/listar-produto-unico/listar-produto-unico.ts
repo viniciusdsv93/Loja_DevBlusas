@@ -14,7 +14,6 @@ export class ListarProdutoUnicoController implements Controller {
 		const { params } = HttpRequest;
 		const { id } = params;
 		const produto = await this.listarProdutoUnicoUsecase.execute(id);
-		console.log({ produto });
 		if (produto) {
 			return ok(produto);
 		}

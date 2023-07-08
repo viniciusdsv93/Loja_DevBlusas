@@ -14,7 +14,7 @@ export class MongoProdutosRepository implements IProdutosRepository {
 	}
 
 	async listar(): Promise<Produto[]> {
-		return await ProdutoModel.find();
+		return await ProdutoModel.find({}, "-descricao -detalhes_tecnicos");
 	}
 
 	async listarProduto(id: string): Promise<Produto | null> {
