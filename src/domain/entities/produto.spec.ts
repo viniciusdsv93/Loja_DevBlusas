@@ -3,13 +3,14 @@ import { Produto } from "./produto";
 describe("Entidade Produto", () => {
 	test("Deve lançar uma exceção caso não seja informado o nome do produto", () => {
 		expect(() => {
-			new Produto("", 5, 120.0, 4, "https://www.url-de-exemplo-valida.com");
+			new Produto("", "1", 5, 120.0, 4, "https://www.url-de-exemplo-valida.com");
 		}).toThrowError("O nome do produto é obrigatório");
 	});
 	test("Deve lançar uma exceção caso não seja informada a nota do produto", () => {
 		expect(() => {
 			new Produto(
 				"nome_de_exemplo",
+				"roupa",
 				undefined,
 				120.0,
 				4,
@@ -21,6 +22,7 @@ describe("Entidade Produto", () => {
 		expect(() => {
 			new Produto(
 				"nome_de_exemplo",
+				"roupa",
 				5,
 				undefined,
 				4,
@@ -32,6 +34,7 @@ describe("Entidade Produto", () => {
 		expect(() => {
 			new Produto(
 				"nome_de_exemplo",
+				"roupa",
 				5,
 				120.0,
 				undefined,
@@ -41,18 +44,19 @@ describe("Entidade Produto", () => {
 	});
 	test("Deve lançar uma exceção caso não seja informada a url da imagem do produto", () => {
 		expect(() => {
-			new Produto("nome_de_exemplo", 5, 120.0, 4, undefined);
+			new Produto("nome_de_exemplo", "roupa", 5, 120.0, 4, undefined);
 		}).toThrowError("A url de imagem do produto é obrigatória");
 	});
 	test("Deve lançar uma exceção caso o nome possua menos do que dois caracteres", () => {
 		expect(() => {
-			new Produto("a", 5, 120.0, 4, "https://www.url-de-exemplo-valida.com");
+			new Produto("a", "7", 5, 120.0, 4, "https://www.url-de-exemplo-valida.com");
 		}).toThrowError("O nome do produto deve possuir ao menos dois caracteres");
 	});
 	test("Deve lançar uma exceção caso o nome possua mais do que 255 caracteres", () => {
 		expect(() => {
 			new Produto(
 				"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+				"roupa",
 				5,
 				120.0,
 				4,
@@ -64,6 +68,7 @@ describe("Entidade Produto", () => {
 		expect(() => {
 			new Produto(
 				"nome_de_exemplo",
+				"roupa",
 				-1,
 				120.0,
 				4,
@@ -75,6 +80,7 @@ describe("Entidade Produto", () => {
 		expect(() => {
 			new Produto(
 				"nome_de_exemplo",
+				"roupa",
 				6,
 				120.0,
 				4,
@@ -86,6 +92,7 @@ describe("Entidade Produto", () => {
 		expect(() => {
 			new Produto(
 				"nome_de_exemplo",
+				"roupa",
 				5,
 				-120.0,
 				4,
@@ -97,6 +104,7 @@ describe("Entidade Produto", () => {
 		expect(() => {
 			new Produto(
 				"nome_de_exemplo",
+				"roupa",
 				5,
 				120.0,
 				0.1,
@@ -106,12 +114,13 @@ describe("Entidade Produto", () => {
 	});
 	test("Deve lançar uma exceção caso a url de imagem não seja válida", () => {
 		expect(() => {
-			new Produto("nome_de_exemplo", 5, 120.0, 4, "url_invalida");
+			new Produto("nome_de_exemplo", "roupa", 5, 120.0, 4, "url_invalida");
 		}).toThrowError("A url de imagem do produto deve ser válida");
 	});
 	test("Deve calcular o valor de cada parcela corretamente", () => {
 		const produto = new Produto(
 			"nome_de_exemplo",
+			"roupa",
 			5,
 			120.0,
 			4,
@@ -122,6 +131,7 @@ describe("Entidade Produto", () => {
 	test("Deve calcular o preço PIX corretamente", () => {
 		const produto = new Produto(
 			"nome_de_exemplo",
+			"roupa",
 			5,
 			1000.0,
 			4,
@@ -132,6 +142,7 @@ describe("Entidade Produto", () => {
 	test("Deve gerar um id ao instanciar um objeto produto", () => {
 		const produto = new Produto(
 			"nome_de_exemplo",
+			"roupa",
 			5,
 			1000.0,
 			4,

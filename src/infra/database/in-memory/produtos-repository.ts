@@ -1,7 +1,7 @@
-import { IProdutosRepository } from "../../../application/repositories/produtos-repository";
+import { IListarProdutosRepository } from "../../../application/repositories/produtos-repository";
 import { Produto } from "../../../domain/entities/produto";
 
-export class InMemoryProdutosRepository implements IProdutosRepository {
+export class InMemoryProdutosRepository implements IListarProdutosRepository {
 	private listaProdutos: Produto[];
 
 	constructor() {
@@ -10,7 +10,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"blusa/ casaco verde",
 				"blusas",
 				5,
-				120.90,
+				120.9,
 				4,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/blusas%2Fdivaris-shirichena-0SuERJPdjHk-unsplash.jpg?alt=media&token=2011197b-63fb-4ad0-8910-e799e5abf91f"
 			),
@@ -18,7 +18,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"blusa/ casaco preto",
 				"blusas",
 				5,
-				190.40,
+				190.4,
 				4,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/blusas%2Fdivaris-shirichena-KJXJI8cIlwk-unsplash.jpg?alt=media&token=eb564f5c-37f0-423d-a1e5-2a97dbf7bcea"
 			),
@@ -42,7 +42,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"blusa/ casaco de pelo creme",
 				"blusas",
 				5,
-				89.90,
+				89.9,
 				2,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/blusas%2Fsamanta-sokolova-m2evGtglxT4-unsplash.jpg?alt=media&token=d3100c54-caf4-49b5-9c87-285987774228"
 			),
@@ -75,7 +75,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"calça jeans laranja",
 				"calças",
 				5,
-				139.90,
+				139.9,
 				4,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/cal%C3%A7as%2Femmeline-t-SdR2wW-v4PE-unsplash.jpg?alt=media&token=54de9eec-2a30-4629-8444-79db1fbe9440"
 			),
@@ -91,7 +91,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"calça jeans preta",
 				"calças",
 				5,
-				139.90,
+				139.9,
 				5,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/cal%C3%A7as%2Fsamanta-sokolova-1VcYSq_XtoQ-unsplash.jpg?alt=media&token=52c79d97-beb8-4d6d-a549-47187a88dab8"
 			),
@@ -100,7 +100,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"camiseta branca de botão",
 				"camisetas",
 				5,
-				59.90,
+				59.9,
 				2,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/camisetas%2Fantonio-figueredo-3I_aBm_xbkw-unsplash.jpg?alt=media&token=a1f2cc41-ba25-46a7-b680-370edbc26b82"
 			),
@@ -108,7 +108,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"camiseta rosa",
 				"camisetas",
 				5,
-				49.90,
+				49.9,
 				2,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/camisetas%2Fjustin-essah-xzH6vch95YE-unsplash.jpg?alt=media&token=2ec8c58c-a2fa-4c10-bd30-56440b832bfa"
 			),
@@ -116,7 +116,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"camiseta laranja manga longa",
 				"camisetas",
 				5,
-				79.90,
+				79.9,
 				3,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/camisetas%2Fmatas-katinas-7ITfJfAxxY4-unsplash.jpg?alt=media&token=8c1198da-4b1e-47dc-9b33-4bbe6b58e7a1"
 			),
@@ -124,7 +124,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"camiseta branca",
 				"camisetas",
 				5,
-				39.90,
+				39.9,
 				2,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/camisetas%2Fmediamodifier-tT6k5S0fvxs-unsplash.jpg?alt=media&token=628fdd0d-21bc-4a43-b126-3a6e1916316b"
 			),
@@ -132,7 +132,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"camiseta florida",
 				"camisetas",
 				5,
-				59.90,
+				59.9,
 				2,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/camisetas%2Fsonnie-hiles-jS9ZsQOQGIA-unsplash.jpg?alt=media&token=d166cf6e-b779-427e-a01d-2c4a9613d6ce"
 			),
@@ -141,7 +141,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"vestido preto",
 				"vestidos",
 				5,
-				159.90,
+				159.9,
 				4,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/vestidos%2Fnapat-saeng-EoVzkcclFqs-unsplash.jpg?alt=media&token=53378fb6-cdc6-4e21-9ff8-a2d4b3be4e36"
 			),
@@ -149,7 +149,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"vestido preto artistico",
 				"vestidos",
 				5,
-				259.90,
+				259.9,
 				8,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/vestidos%2Fpooja-chaudhary-bqnbKxiIGZI-unsplash.jpg?alt=media&token=b0883b43-7eff-470e-9fa1-2b930ffd8bd0"
 			),
@@ -157,7 +157,7 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"vestido verde militar",
 				"vestidos",
 				5,
-				169.90,
+				169.9,
 				4,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/vestidos%2Fvalerie-elash-T5tIoXFJfSk-unsplash.jpg?alt=media&token=071aa62c-ca86-4a48-9f33-a5dee4a2e891"
 			),
@@ -165,11 +165,10 @@ export class InMemoryProdutosRepository implements IProdutosRepository {
 				"vestido branco",
 				"vestidos",
 				5,
-				129.90,
+				129.9,
 				4,
 				"https://firebasestorage.googleapis.com/v0/b/loja-roupa-45e30.appspot.com/o/vestidos%2Fwesley-tingey-nVs43FLFb9U-unsplash.jpg?alt=media&token=066e324d-bf49-4ec5-9624-209f8fb51694"
 			),
-
 		];
 	}
 

@@ -6,6 +6,7 @@ describe("Controller listar produtos", () => {
 	let listaProdutos = [
 		new Produto(
 			"nome_produto1",
+			"roupa",
 			5,
 			100.0,
 			4,
@@ -13,6 +14,7 @@ describe("Controller listar produtos", () => {
 		),
 		new Produto(
 			"nome_produto2",
+			"roupa",
 			5,
 			1000.0,
 			4,
@@ -20,6 +22,7 @@ describe("Controller listar produtos", () => {
 		),
 		new Produto(
 			"nome_produto3",
+			"roupa",
 			5,
 			10000.0,
 			4,

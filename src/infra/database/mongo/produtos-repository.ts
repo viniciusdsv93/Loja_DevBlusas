@@ -1,9 +1,9 @@
-import { IProdutosRepository } from "../../../application/repositories/produtos-repository";
+import { IListarProdutoUnicoRepository } from "../../../application/repositories/produtos-repository";
 import { Produto } from "../../../domain/entities/produto";
 import { db } from "./config/db-connect";
 import { ProdutoModel } from "./models/produtos-model";
 
-export class MongoProdutosRepository implements IProdutosRepository {
+export class MongoProdutosRepository implements IListarProdutoUnicoRepository {
 	private db: any;
 
 	constructor() {
