@@ -20,3 +20,12 @@ export const created = (data: any): HttpResponse => {
 		body: data,
 	};
 };
+
+export const notFound = (id: string): HttpResponse => {
+	return {
+		statusCode: 404,
+		body: {
+			message: `Não foi localizado nenhum produto com o id ${id}`,
+		},
+	};
+};

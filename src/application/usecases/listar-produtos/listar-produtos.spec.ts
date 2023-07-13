@@ -1,20 +1,21 @@
 import { Produto } from "../../../domain/entities/produto";
 import { IListarProdutos } from "../../../domain/usecases/listar-produtos";
-import { IProdutosRepository } from "../../repositories/produtos-repository";
+import { IListarProdutosRepository } from "../../repositories/produtos-repository";
 import { ListarProdutos } from "./listar-produtos";
 
 describe("Usecase listar produtos", () => {
 	type SutTypes = {
 		listarProdutos: IListarProdutos;
-		produtosRepository: IProdutosRepository;
+		produtosRepository: IListarProdutosRepository;
 	};
 
-	const makeProdutosRepository = (): IProdutosRepository => {
-		class ProdutosRepositoryStub implements IProdutosRepository {
+	const makeProdutosRepository = (): IListarProdutosRepository => {
+		class ProdutosRepositoryStub implements IListarProdutosRepository {
 			async listar(): Promise<Produto[]> {
 				return [
 					new Produto(
 						"nome_produto1",
+						"vestido",
 						5,
 						100.0,
 						4,
@@ -22,6 +23,7 @@ describe("Usecase listar produtos", () => {
 					),
 					new Produto(
 						"nome_produto2",
+						"vestido",
 						5,
 						1000.0,
 						4,
@@ -29,6 +31,7 @@ describe("Usecase listar produtos", () => {
 					),
 					new Produto(
 						"nome_produto3",
+						"vestido",
 						5,
 						10000.0,
 						4,

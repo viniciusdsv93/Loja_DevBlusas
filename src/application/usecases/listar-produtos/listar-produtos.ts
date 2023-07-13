@@ -1,10 +1,10 @@
 import { IListarProdutos } from "../../../domain/usecases/listar-produtos";
-import { IProdutosRepository } from "../../repositories/produtos-repository";
+import { IListarProdutosRepository } from "../../repositories/produtos-repository";
 
 export class ListarProdutos implements IListarProdutos {
-	private produtosRepository: IProdutosRepository;
+	private produtosRepository: IListarProdutosRepository;
 
-	constructor(produtosRepository: IProdutosRepository) {
+	constructor(produtosRepository: IListarProdutosRepository) {
 		this.produtosRepository = produtosRepository;
 	}
 

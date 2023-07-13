@@ -1,10 +1,10 @@
-import { IProdutosRepository } from "../../../application/repositories/produtos-repository";
+import { IListarProdutosRepository } from "../../../application/repositories/produtos-repository";
 import { Produto } from "../../../domain/entities/produto";
 import { InMemoryProdutosRepository } from "./produtos-repository";
 
 describe("In memory produtos repository", () => {
 	type SutTypes = {
-		sut: IProdutosRepository;
+		sut: IListarProdutosRepository;
 	};
 
 	const makeSut = (): SutTypes => {
